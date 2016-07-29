@@ -12,12 +12,3 @@ a {
     /*!*color: #cd2547;*!*/
 /*}*/
 
-.xizang {
-  background-image: url('../images/xizang.png');
-  position: absolute;
-  left: 42px;
-  top: 788px;
-  width: 1633px;
-  height: 1355px;
-  z-index: 2;
-}
