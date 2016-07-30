@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Story of CHINA' });
+  res.render('index', { title: 'CHINAsee' });
 });
 
 module.exports = router;
