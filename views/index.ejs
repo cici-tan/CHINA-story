@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-head" href="#">CHINAhop</a>
+      <a class="navbar-head" href="/map">CHINAhop</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -31,11 +31,12 @@
     </div>
   </div>
 </nav>
-<p>Explore everything about China here, and hop to any corner you want...</p>
+<p style="text-align: center;"> Explore everything about China here, and hop to any corner you want...</p>
+<p style="text-align: center;"> Help you to know the real China!</p>
 <p style="text-align: center;"><img src="/images/mapNew.png" usemap="#Map" style="width: 900px;height: 600px;" alt="map"></p>
 
 <map name="Map">
-  <area shape="poly" coords="260,90,150,142,30,200,80,288,255,280,305,240,355,203" title="Xinjiang - Home of Prairie" href="/xinjiang">
+  <area shape="poly" coords="260,90,150,142,30,200,80,288,255,280,305,240,355,203" title="Xinjiang - Home of Prairie" onclick="show()" href="/xinjiang">
   <area shape="poly" coords="57,333,270,436,390,400,345,357,243,300,75,285" title="Tibet - " href="/tibet">
   <area shape="poly" coords="370,423,358,485,430,525,508,495,473,448,440,460,387,420"itle="Yunan - " href="/yunan">
   <area shape="poly" coords="385,350,530,360,498,386,505,425,467,420,460,450,390,410" title="Sichuan - Spicy Land" href="/sichuan">
@@ -66,5 +67,30 @@
   <area shape="poly" coords="652,342,679,321,711,345,711,354,731,370,713,390,680,387,671,362" title="Anhui" href="/anhui">
   <area shape="poly" coords="650,290,684,264,700,264,714,277,756,262,716,302,691,315,676,309" title="Shandong" href="/shandong">
 </map>
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+  //show the pic for every state
+  function show(cityName) {
+    var city = prompt(cityName, "/map");
+    // function print the map
+    print();
+  }  
+</script>
 </body>
 </html>

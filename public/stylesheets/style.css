@@ -42,8 +42,10 @@ p {font-size: 16px;}
   font-size: 40px;
   font-family: "Apple SD Gothic Neo";
   letter-spacing: 2px;
+
 }
 
 .navbar-head:hover{
   color: darkgrey !important;
+  text-decoration: none;
 }
