@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next, stateName) {
-    res.render('cityView', {title: stateName});
+router.get('/', function(req, res, next) {
+    res.render('cityView');
 });
 
 module.exports = router;

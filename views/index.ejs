@@ -20,11 +20,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-head" href="/map">CHINAhop</a>
+      <a class="navbar-head" href="/index">CHINAhop</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">WHERE</a></li>
+        <li><a href="/cityView">WHERE</a></li>
         <li><a href="#">WHEN</a></li>
         <li><a href="#">WHY</a></li>
       </ul>
@@ -36,10 +36,10 @@
 <p style="text-align: center;"><img src="/images/mapNew.png" usemap="#Map" style="width: 900px;height: 600px;" alt="map"></p>
 
 <map name="Map">
-  <area shape="poly" coords="260,90,150,142,30,200,80,288,255,280,305,240,355,203" title="Xinjiang - Home of Prairie" onclick="show()" href="/xinjiang">
-  <area shape="poly" coords="57,333,270,436,390,400,345,357,243,300,75,285" title="Tibet - " href="/tibet">
-  <area shape="poly" coords="370,423,358,485,430,525,508,495,473,448,440,460,387,420"itle="Yunan - " href="/yunan">
-  <area shape="poly" coords="385,350,530,360,498,386,505,425,467,420,460,450,390,410" title="Sichuan - Spicy Land" href="/sichuan">
+  <area shape="poly" coords="260,90,150,142,30,200,80,288,255,280,305,240,355,203" title="Xinjiang - Home of Prairie" alt="Xinjiang" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
+  <area shape="poly" coords="57,333,270,436,390,400,345,357,243,300,75,285" title="Tibet - " alt="Tibet" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
+  <area shape="poly" coords="370,423,358,485,430,525,508,495,473,448,440,460,387,420"itle="Yunan - " alt="Yunnan" onmouseover="show('Yunnan')" onmouseout="showClose()" href = "javascript:void(0)">
+  <area shape="poly" coords="385,350,530,360,498,386,505,425,467,420,460,450,390,410" title="Sichuan - Spicy Land" alt="Szechuan" onmouseover="show('Szechuan')" onmouseout="showClose()" href = "javascript:void(0)">
   <area shape="poly" coords="420,380,420,515,500,510,480,450" title="Yunnan - Minority Home" href="/yunan">
   <area shape="poly" coords="278,251,425,270,457,300,428,350,375,333,365,338,250,310" title="Qinghai - " href="/qinghai">
   <area shape="poly" coords="366,193,309,240,450,280,450,324,505,343,545,300,495,300" title="Gansu" href="/gansu">
@@ -47,7 +47,7 @@
   <area shape="poly" coords="478,443,488,476,568,462,562,427,540,406" title="Guizhou - " href="guizhou">
   <area shape="poly" coords="508,348,514,319,544,314,544,294,525,281,580,250,580,340,560,360" title="Shanxi3" href="/shanxi3">
   <area shape="poly" coords="497,383,504,416,538,406,563,426,553,390,578,377,542,357,515,388" title="Chongqing" href="/chongqing">
-  <area shape="poly" coords="382,194,393,230,438,258,475,249,472,276,515,252,519,269,550,273,581,242,628,204,672,191,690,205,750,175,717,136,742,57,679,32,632,103,685,125,484,220" title="innerMongolia" href="/innerMongolia">
+  <area shape="poly" coords="382,194,393,230,438,258,475,249,472,276,515,252,519,269,550,273,581,242,628,204,672,191,690,205,750,175,717,136,742,57,679,32,632,103,685,125,484,220" title="innerMongolia" onmouseover="show('InnerMongolia')" onmouseout="showClose()" href = "javascript:void(0)">>
   <area shape="poly" coords="690,34,742,50,742,95,729,114,850,145,869,122,870,68,824,90,736,25" title="Heilongjiang" href="/heilongjiang">
   <area shape="poly" coords="722,135,741,132,758,141,804,151,827,158,843,148,860,156,854,171,828,188,796,200," title="Jilin" href="/jilin">
   <area shape="poly" coords="699,200,757,172,790,203,742,243,738,215,716,226" title="Liaoning" href="/liaoning">
@@ -67,30 +67,44 @@
   <area shape="poly" coords="652,342,679,321,711,345,711,354,731,370,713,390,680,387,671,362" title="Anhui" href="/anhui">
   <area shape="poly" coords="650,290,684,264,700,264,714,277,756,262,716,302,691,315,676,309" title="Shandong" href="/shandong">
 </map>
-<div class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<div id="popup" class="city_pop"></div>
+<div id="close" class="closeCity_pop">
+<img id="pic" src="" width="230px" height="250px">
+</div>
 <script>
   //show the pic for every state
-  function show(cityName) {
-    var city = prompt(cityName, "/map");
+  function show(city) {
+//    var city = prompt("Keyword Search", "food/city/momentShare");
+//    var img = document.createElement('img');
+    var name = document.createElement('title');
+    name.innerHTML = city;
+    document.getElementById('popup').style.display='block';
+    switch (city){
+      case 'Xinjiang':
+            document.getElementById('pic').src = "/images/xinjiang.png";
+      break;
+      case 'Tibet':
+        document.getElementById('pic').src = "/images/tibet.png";
+      break;
+      case 'Yunnan':
+            img.src = "/images/yunnan.png";
+      break;
+      case 'InnerMongolia':
+            img.src = "/images/innerMongolia";
+      break;
+      default: break;
+
+    }
+    document.getElementById('close').style.display='block';
+
     // function print the map
-    print();
+   // print();
   }  
+  function showClose() {
+    document.getElementById('popup').style.display='none';
+    document.getElementById('close').style.display='none';
+    document.getElementById('img').src = 'xinjiang';
+  }
 </script>
 </body>
 </html>
