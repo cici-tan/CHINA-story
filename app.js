@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// diff files connected diff vars
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var cityView = require('./routes/cityView');
@@ -23,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/index', routes);
+// open diff pages by routes
+app.use('/', routes);
 app.use('/users', users);
 app.use('/cityView', cityView);
 
