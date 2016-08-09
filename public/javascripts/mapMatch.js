@@ -107,6 +107,7 @@ function show(city) {
         case 'Taiwan':
             document.getElementById('pic').src = "/images/taiwan.png";
             break;
+     
         default: break;
 
     }
