@@ -9,10 +9,13 @@
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="/javascripts/mapMatch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/D3Map.js"></script>
 </head>
 
 <body>
+
 <nav class="navbar navbar-default" style="border: 0">
   <div class="container">
     <div class="navbar-header">
@@ -25,7 +28,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/cityView">WHERE</a></li>
+        <li><a href="/cityView">ABOUT</a></li>
         <li><a href="#">WHEN</a></li>
         <li><a href="#">WHY</a></li>
       </ul>
@@ -34,47 +37,22 @@
 </nav>
 <p style="text-align: center;"> Explore everything about China here, and hop to any corner you want...</p>
 <p style="text-align: center;"> Help you to know the real China!</p>
-<p style="text-align: center;"><img src="/images/mapNew.png" usemap="#Map" style="width: 900px;height: 600px;" alt="map"></p>
 
-<map name="Map">
-  <area shape="poly" coords="260,90,150,142,30,200,80,288,255,280,305,240,355,203"  alt="Xinjiang" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="57,333,270,436,390,400,345,357,243,300,75,285"  alt="Tibet" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="370,423,358,485,430,525,508,495,473,448,440,460,387,420" alt="Yunnan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="385,350,530,360,498,386,505,425,467,420,460,450,390,410" alt="Szechuan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="420,380,420,515,500,510,480,450" alt="Yunnan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">>
-  <area shape="poly" coords="278,251,425,270,457,300,428,350,375,333,365,338,250,310" alt="Qinghai" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="366,193,309,240,450,280,450,324,505,343,545,300,495,300"  alt="Gansu" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="515,250,530,275,520,300,500,310,480,278" alt="Ningxia" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="478,443,488,476,568,462,562,427,540,406" alt="Guizhou" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="508,348,514,319,544,314,544,294,525,281,580,250,580,340,560,360" alt="Shanxi3" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="497,383,504,416,538,406,563,426,553,390,578,377,542,357,515,388" alt="Chongqing" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="382,194,393,230,438,258,475,249,472,276,515,252,519,269,550,273,581,242,628,204,672,191,690,205,750,175,717,136,742,57,679,32,632,103,685,125,484,220" alt="InnerMongolia" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="690,34,742,50,742,95,729,114,850,145,869,122,870,68,824,90,736,25" alt="Heilongjiang" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="722,135,741,132,758,141,804,151,827,158,843,148,860,156,854,171,828,188,796,200" alt="Jilin" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="699,200,757,172,790,203,742,243,738,215,716,226" alt="Liaoning" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="670,248,678,254,678,258,683,264,677,272,669,265" alt="Tianjin" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="619,216,631,247,622,259,630,274,623,286,653,294,682,258,648,239,662,218,675,218,687,240,708,230,674,192,630,203" alt="Hebei" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="585,249,579,315,623,300,628,275,619,260,629,246,622,233" alt="Shanxi1" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="579,323,593,345,660,365,652,343,671,327,650,308,654,300,629,300" alt="Henan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="573,350,580,376,552,393,561,408,588,390,641,402,675,390,663,369," alt="Hubei" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="563,408,569,455,594,451,607,475,643,463,637,430,645,410,587,396" alt="Hunan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="488,479,512,479,592,456,610,485,570,526,529,522,500,500,512,493" alt="Guangxi" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="575,525,617,480,656,467,652,481,692,475,705,486,580,540" alt="Canton" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="556,565,574,552,596,553,572,579" alt="Hainan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="760,480,785,453,785,480,775,510,758,495" alt="Taiwan" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="684,469,719,417,732,428,755,425,743,456,710,485" alt="Fujian" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="710,400,726,380,773,380,773,407,756,425,735,435" alt="Zhejiang" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="677,314,693,320,715,305,765,347,765,363,742,378,730,378,716,355,725,343," alt="Jiangsu" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="652,342,679,321,711,345,711,354,731,370,713,390,680,387,671,362" alt="Anhui" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="650,290,684,264,700,264,714,277,756,262,716,302,691,315,676,309" alt="Shandong" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)"><area shape="poly" coords="650,290,684,264,700,264,714,277,756,262,716,302,691,315,676,309" alt="Shandong" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="644,408,648,417,640,429,648,449,648,462,661,465,657,475,683,472,683,455,699,430,718,412,711,394,682,391" alt="Jiangxi" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="654,551" alt="Hongkong" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="646,238,665,257,668,248,673,240,661,236,652,247" alt="Beijing" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-  <area shape="poly" coords="759,388,766,396,759,402,754,395" alt="Shanghai" onmouseover="show(alt)" onmouseout="showClose()" href = "javascript:void(0)">
-</map>
-<div id="popup" class="city_pop"></div>
-<div id="close" class="closeCity_pop">
-<img id="pic" src="" width="230px" height="250px">
-</div>
+
+<script type="text/javascript" charset="utf-8">
+
+  var width = 2000, height = 700;
+  //create svg
+  var svg = d3.select("body")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height);
+
+  // create projection
+  var projection = d3.geo.mercator().translate([width / 2, height / 2]).center([125, 38]).scale(800);
+
+  var path = d3.geo.path().projection(projection);
+
+</script>
 </body>
 </html>

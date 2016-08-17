@@ -84,10 +84,10 @@ function show(city) {
             document.getElementById('pic').src = "/images/henan.png";
             break;
         case 'Shanxi3':
-            document.getElementById('pic').src = "/images/shanxi3.png";
+            document.getElementById('pic').src = "/images/shanxi.png";
             break;
         case 'shanxi1':
-            document.getElementById('pic').src = "/images/shanxi1.png";
+            document.getElementById('pic').src = "/images/shan_xi.png";
             break;
         case 'Hainan':
             document.getElementById('pic').src = "/images/hainan.png";
