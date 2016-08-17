@@ -5,6 +5,12 @@ body {
 }
 
 p {font-size: 16px;}
+.imageAbout{
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 600px;
+  width: 1420px;
+}
 .margin {margin-bottom: 45px;}
 .bg-1 {
   background-color: #1abc9c; /* Green */
@@ -42,12 +48,17 @@ p {font-size: 16px;}
   font-size: 40px;
   font-family: "Apple SD Gothic Neo";
   letter-spacing: 2px;
-
+  
 }
 
 .navbar-head:hover{
   color: darkgrey !important;
   text-decoration: none;
+  cursor: hand;
+}
+.navbar-head.active{
+
+  transform: translateY(5px);
 }
 
 .city_pop{

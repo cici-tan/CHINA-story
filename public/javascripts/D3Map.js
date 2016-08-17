@@ -1,18 +1,4 @@
 
-//create svg
-// var width = 1000, height = 600;
-//
-// var svg = d3.select("body")
-//     .append("svg")
-//     .attr("width", width)
-//     .attr("height", height);
-//
-// //create projection
-// var projection = d3.geo.mercator().translate([width / 2, height / 2]).center([105, 38]).scale(550);
-//
-// //create path
-// var path = d3.geo.path().projection(projection);
-
 //load json
 d3.json("jsonFiles/china.geo.json", function(json) {
 
@@ -58,19 +44,40 @@ d3.json("jsonFiles/china.geo.json", function(json) {
                 .attr("width", 285)
                 .attr("height", 200)
             ;
+            //show titles
+            svg.append("text")
+                .attr("id", "text2")
+                .attr("x", 65)
+                .attr("y", 250)
+                .attr("text-anchor", "start")
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "12px")
+                .attr("font-weight", "lighter")
+                .attr("fill", "black")
+                .text(data.title + "- please click here if you wanna explore more!")
+            ;
 
 
+
+        })
+        .on('click', function(data){
+            // d3.select(this).attr('fill', '#FFFFFF');
+            var url = '/homePage';
+            window.location = url;
+            // ;
 
         })
         .on('mouseout', function(data) {
             d3.select(this).attr('fill', '#BFB7B7');
-            //Remove the tooltip
+             //Remove the tooltip
             d3.select("#text1").remove();
             d3.select("#image").remove();
             d3.select("#rect").remove();
+            d3.select("#text2").remove();
         })
+
         .attr('fill', '#BFB7B7')
-        .attr('stroke', 'rgba(255,255,255,1)')
+        .attr('stroke', '#FFFFFF')
         .attr('stroke-width', 1.2)
     ;
 });
