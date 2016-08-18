@@ -10,7 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="/javascripts/mapMatch.js"></script>
+  <!--<script src="/javascripts/mapMatch.js"></script>-->
+  <script src="/javascripts/search.js"></script>
   <script type="text/javascript" charset="utf-8" src="/javascripts/D3Map.js"></script>
 </head>
 
@@ -28,20 +29,41 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/when">WHEN</a></li>
-        <li><a href="/where">WHERE</a></li>
-        <li><a href="/about">ABOUT</a></li>
+        <!--<li><a href="/when">WHEN</a></li>-->
+        <div class="dropdown">
+          <span>WHEN<span class="caret" style="color: inherit;"></span> | </span>
+          <div class="dropdown-content">
+            <a href="#">1</a>
+            <a href="#">2</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>WHERE <span class="caret" style="color: inherit;"></span> | </span>
+          <div class="dropdown-content">
+            <li><a href="#">14324</a></li>
+            <li><a href="#">22423</a></li>
+            <li><a href="#">144</a></li>
+            <li><a href="#">223</a></li>
+          </div>
+        </div>
+        <!--<li><a onclick="mySearch()">WHERE</a></li>-->
+        <div class="dropdown">
+          <span><a href="/about" style="color: inherit; text-decoration: none;"> ABOUT</a></span>
+        </div>
       </ul>
     </div>
   </div>
 </nav>
 <p style="text-align: center;"> Explore everything about China here, and hop to any corner you want...</p>
 <p style="text-align: center;"> Get to know the real China!</p>
+<form>
+  <input type="text" id="searchBox" name="search" placeholder="Search..">
+</form>
 
 
 <script type="text/javascript" charset="utf-8">
 
-  var width = 2000, height = 700;
+  var width = 1400, height = 700;
   //create svg
   var svg = d3.select("body")
           .append("svg")
@@ -49,7 +71,7 @@
           .attr("height", height);
 
   // create projection
-  var projection = d3.geo.mercator().translate([width / 2, height / 2]).center([125, 38]).scale(800);
+  var projection = d3.geo.mercator().translate([width / 2, height / 2]).center([105, 38]).scale(800);
 
   var path = d3.geo.path().projection(projection);
 

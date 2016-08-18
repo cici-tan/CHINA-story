@@ -8,7 +8,7 @@ d3.json("jsonFiles/china.geo.json", function(json) {
         .append("path")
         .attr("d", path)
         .on('mouseover', function(data) {
-            d3.select(this).attr('fill', '#FCB094');
+            d3.select(this).attr('fill', 'rgba(189, 67, 37, 0.96)');
 
             //create tooltip rect
             svg.append("rect")

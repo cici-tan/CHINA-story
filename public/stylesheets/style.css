@@ -11,6 +11,8 @@ p {font-size: 16px;}
   height: 600px;
   width: 1440px;
 }
+
+
 .margin {margin-bottom: 45px;}
 .bg-1 {
   background-color: #1abc9c; /* Green */
@@ -40,9 +42,11 @@ p {font-size: 16px;}
   letter-spacing: 3px;
 }
 
-.navbar-nav  li a:hover {
-  color: #cd561c !important;
-}
+/*span:hover {*/
+  /*color: rgba(189, 67, 37, 0.96) !important;*/
+  /*cursor: pointer;*/
+  /*text-decoration: none;*/
+/*}*/
 
 .navbar-head{
   color: #cd561c;
@@ -85,11 +89,63 @@ p {font-size: 16px;}
 
 span.border {
   background-color: transparent;
-  /*color: white;*/
+  color: white;
   padding: 30px;
   font-size: 30px;
   letter-spacing: 10px;
 }
+input[type=text] {
+  width: 100px;
+  position: absolute;
+  left: 616px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  border-radius: 2px;
+  font-size: 13px;
+  background-color: white;
+  background-image: url('/images/searchicon.png');
+  background-position: -1px 1px;
+  background-size: 25%;
+  background-repeat: no-repeat;
+  padding: 5px 20px 5px 30px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+input[type=text]:focus{
+  width: 13%;
+  background-size: 13%;
+  /*margin-right: 0px;*/
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-top: 20px;
+  color: #818181;
+}
+
+.dropdown span:hover{
+  color: rgba(189, 67, 37, 0.96) !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /*.city_pop{*/
   /*display: none;*/
   /*position: fixed;*/
