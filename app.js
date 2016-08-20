@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var cityView = require('./routes/cityView');
 var about = require('./routes/about');
+var search = require('./routes/search');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/cityView', cityView);
 app.use('/about', about);
+// app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -63,5 +65,22 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.get('/search', function (req,res) {
+  console.log('hhahhahh');
+  var i = req.get('search');
+  switch (i){
+    case 'food':
+        console.log('food');
+      res.send('search');
+          break;
+    case 'clothes':
+      res.render('clothes', { title: 'clothes distribution' });
+          break;
+    case 'weather':
+      res.render('weather', { title: 'weather distribution' });
+          break;
+  }
+
+});
 
 module.exports = app;
