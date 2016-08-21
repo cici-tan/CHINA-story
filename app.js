@@ -14,6 +14,7 @@ var search = require('./routes/search');
 
 var app = express();
 
+// app.listen(3306,'52.38.139.161');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -65,13 +66,18 @@ app.use(function(err, req, res, next) {
   });
 });
 
+
 app.get('/search', function (req,res) {
+
+  if(req.param('keyword')=='food'){
+    console.log('Search: ' + req.param('keyword'));
+  }
   console.log('hhahhahh');
-  var i = req.get('search');
+  var i = req.get('keyword');
   switch (i){
     case 'food':
         console.log('food');
-      res.send('search');
+      res.send('about');
           break;
     case 'clothes':
       res.render('clothes', { title: 'clothes distribution' });
